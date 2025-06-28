@@ -47,7 +47,3 @@ Image-Classifier/
 - Upload an image through the Angular UI
 - Backend predicts the image class using PyTorch ResNet18 model
 - Prediction is stored in CockroachDB
-
----
-
-Made with ❤️ for learning and demo purposes.
