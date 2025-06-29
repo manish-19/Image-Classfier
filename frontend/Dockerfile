@@ -1,7 +1,9 @@
 FROM node:18 as build
 WORKDIR /app
 COPY . .
-RUN npm install && npm run build --configuration production
+RUN npm install -g @angular/cli
+RUN npm install
+RUN npm run build --configuration frontend-tmp
 
 FROM nginx:alpine
-COPY --from=build /app/dist/frontend /usr/share/nginx/html
+COPY --from=build /app/dist/frontend-tmp /usr/share/nginx/html
